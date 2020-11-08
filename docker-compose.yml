@@ -1,0 +1,25 @@
+version : '3'
+
+services:
+
+    web:
+        build:
+            context: .
+            dockerfile: ubuntu.Dockerfile
+        image: ubuntu-custom
+        volumes:
+            - ./flask:/opt/Flask-app/
+        #command: python3 /opt/Flask-app/app.py
+
+    proxy:
+        build:
+            context: .
+            dockerfile: nginx.Dockerfile
+        image: nginx-custom
+        ports:
+            - '443:443'
+            - '80:80'
+        depends_on:
+            - web
+
+    
