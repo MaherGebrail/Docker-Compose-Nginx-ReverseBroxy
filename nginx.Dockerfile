@@ -1,5 +1,4 @@
+# this file to prevent deleting the original nginx image with every (docker-compose down --rmi all)
+
 FROM nginx
 
-COPY nginx.conf /etc/nginx/conf.d/default.conf
-COPY ./certs/MyCertificate.crt /etc/nginx/certs/
-COPY ./certs/MyKey.key /etc/nginx/certs/
