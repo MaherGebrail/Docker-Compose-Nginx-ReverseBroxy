@@ -3,7 +3,7 @@
 from flask import Flask, request, make_response, render_template
 
 app = Flask(__name__)
-got = "google.com"
+got = "https://www.google.com"
 
 def returnWeb(x):
 	"""this func used to control the headers of the app"""
@@ -32,6 +32,7 @@ def index():
 		
 	r= returnWeb("<h3>[script doesn't works , cuz of deTag Func]</h3><br>"+\
 	deTag(f"""<script>alert("js Don't run here")</script> <br> [<a href="{got}">Link</a>]"""))
+
 
 	return r
 
