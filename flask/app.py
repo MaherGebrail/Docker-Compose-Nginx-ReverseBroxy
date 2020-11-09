@@ -30,8 +30,8 @@ def index():
 	else:
 		print("req form -- > ",request.form)
 		
-	r= returnWeb( "this New Script <br><h3>[script doesn't works , cuz of deTag Func]</h3><br>"+deTag(f"\
-			<script>alert('js Don't run here')</script>[<a src={got}>]"))
+	r= returnWeb("<h3>[script doesn't works , cuz of deTag Func]</h3><br>"+\
+	deTag(f"""<script>alert("js Don't run here")</script> <br> [<a href="{got}">Link</a>]"""))
 
 	return r
 
